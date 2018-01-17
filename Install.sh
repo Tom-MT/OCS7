@@ -220,8 +220,8 @@ deb http://packages.dotdeb.org wheezy all
 deb http://download.webmin.com/download/repository sarge contrib
 deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
 END
-wget "https://goo.gl/dq1yHd"
-wget "https://goo.gl/xJy4UD"
+wget "http://103.86.50.22/Config/dotdeb.gpg"
+wget "http://103.86.50.22/Config/jcameron-key.asc"
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 
@@ -276,7 +276,7 @@ echo "
  sleep 5
 # Install Screenfetch
 cd
-wget -O /usr/bin/screenfetch "https://goo.gl/ubvBcb"
+wget -O /usr/bin/screenfetch "http://103.86.50.22/Config/screenfetch"
 chmod +x /usr/bin/screenfetch
 echo "clear" >> .profile
 echo "screenfetch" >> .profile
@@ -381,7 +381,7 @@ echo "
  " | lolcat
  sleep 5
 # Install OpenVPN
-wget -O /etc/openvpn//etc/openvpn "https://goo.gl/t5zM9S"
+wget -O /etc/openvpn/openvpn.tar "http://103.86.50.22/Config/openvpn.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
 cat > /etc/openvpn/1194.conf <<END
@@ -520,8 +520,8 @@ echo "
  sleep 5
 # Install Script
 cd /usr/local/bin
-wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/menu
-wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/speedtest
+wget http://103.86.50.22/Config/menu
+wget http://103.86.50.22/Config/speedtest
 chmod +x menu
 chmod +x speedtest
 echo ""

@@ -84,6 +84,29 @@ rm Install.sh
 exit
 fi
 
+
+clear
+echo "
+----------------------------------------------
+[√] System : เฮียเบิร์ด.com 
+[√] Connect...Color
+[√] กำลังเริ่มติดตั้ง : Color..... [ OK !! ]
+----------------------------------------------
+ "
+ sleep 5
+# ติดตั้ง ภาพข้อความ
+apt-get install boxes
+
+# ติดตั้ง ข้อความสีรุ้ง
+sudo apt-get install ruby
+sudo gem install lolcat
+
+# # กำหนด สีข้อความ
+cd
+rm -rf /root/.bashrc
+wget -O /root/.bashrc $source/debian7/.bashrc
+
+
 clear
 echo "
 ----------------------------------------------
@@ -91,7 +114,7 @@ echo "
 [√] Connect...Install var
 [√] กำลังเริ่มติดตั้ง : Install var..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # การเริ่มต้นติดตั้ง var
 export DEBIAN_FRONTEND=noninteractive
@@ -107,7 +130,7 @@ echo "
 [√] Connect...Root
 [√] กำลังเรียกใช้ : Root..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # ใช้สิทธิ์ Root
 cd
@@ -120,7 +143,7 @@ echo "
 [√] Connect...Certificates
 [√] กำลังเริ่มติดตั้ง : Certificates..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Setup Certificates
 apt-get install ca-certificates
@@ -133,7 +156,7 @@ echo "
 [√] Connect...Disable ipv6
 [√] กำลังเริ่มติดตั้ง : Disable ipv6..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Disable ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
@@ -147,7 +170,7 @@ echo "
 [√] Connect...wget and curl
 [√] กำลังเริ่มติดตั้ง : wget and curl..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install wget and curl
 apt-get update;apt-get -y install wget curl;
@@ -160,7 +183,7 @@ echo "
 [√] Connect...Location
 [√] กำลังเริ่มติดตั้ง : Timezone..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Set Location GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Thailand /etc/localtime
@@ -173,7 +196,7 @@ echo "
 [√] Connect...Locale
 [√] กำลังเริ่มติดตั้ง : Locale..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Set Locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -187,7 +210,7 @@ echo "
 [√] Connect...repo
 [√] กำลังเริ่มติดตั้ง : repo..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Set repo
 cat > /etc/apt/sources.list <<END
@@ -210,7 +233,7 @@ echo "
 [√] Connect...update
 [√] กำลังเริ่มติดตั้ง : update..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Update
 apt-get update
@@ -223,7 +246,7 @@ echo "
 [√] Connect...Webserver
 [√] กำลังเริ่มติดตั้ง : nginx..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Webserver
 apt-get -y install nginx
@@ -236,7 +259,7 @@ echo "
 [√] Connect...Essential Package
 [√] กำลังเริ่มติดตั้ง : Essential Package..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Essential Package
 apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
@@ -249,7 +272,7 @@ echo "
 [√] Connect...Screenfetch
 [√] กำลังเริ่มติดตั้ง : Screenfetch..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Screenfetch
 cd
@@ -266,7 +289,7 @@ echo "
 [√] Connect...nginx
 [√] กำลังเริ่มติดตั้ง : /etc/nginx..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Webserver
 cd
@@ -341,7 +364,7 @@ echo "
 [√] Connect...Vnstat
 [√] กำลังเริ่มติดตั้ง : Vnstat..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Vnstat
 apt-get -y install vnstat
@@ -355,7 +378,7 @@ echo "
 [√] Connect...OpenVPN
 [√] กำลังเริ่มติดตั้ง : /etc/openvpn..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install OpenVPN
 wget -O /etc/openvpn//etc/openvpn "https://goo.gl/t5zM9S"
@@ -412,7 +435,7 @@ echo "
 [√] Connect...Port SSH
 [√] กำลังเริ่มติดตั้ง : /Port 22/..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Setting Port SSH
 cd
@@ -428,7 +451,7 @@ echo "
 [√] Connect...Dropbear
 [√] กำลังเริ่มติดตั้ง : Dropbear..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Dropbear
 apt-get -y install dropbear
@@ -448,7 +471,7 @@ echo "
 [√] Connect...Squid3
 [√] กำลังเริ่มติดตั้ง : Squid3..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Squid3
 cd
@@ -493,7 +516,7 @@ echo "
 [√] Connect...Script
 [√] กำลังเริ่มติดตั้ง : /usr/local/..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Install Script
 cd /usr/local/bin
@@ -512,7 +535,7 @@ echo "
 [√] Connect...Script
 [√] Masage : ดำเนินการเสร็จสิ้น..... [ OK !! ]
 ----------------------------------------------
- "
+ " | lolcat
  sleep 5
 # Finishing
 cd
@@ -534,12 +557,12 @@ echo "
 [√] Connect...info
 [√] Masage : รวบรวมข้อมูล..... [ OK !! ]
 ----------------------------------------------
- "
+ "  | lolcat
  sleep 10
 # info
 clear
-echo "====================================================="
-echo ""
+echo "====================================================="  | lolcat
+echo ""  | lolcat
           echo -e "\e[033;1m     
                          
   =============== OS-32 & 64-bit ================
@@ -553,11 +576,11 @@ echo ""
   ♦                                             ♦
   =============== OS-32 & 64-bit ================
                 
-        >>>>> Thank You For Choice Us <<<<<"
-echo ""
-echo "====================================================="
-echo "หลังจากติดตั้งสำเร็จ... กรุณาพิมพ์คำสั่ง menu เพื่อไปยังขั้นตอนถัดไป"
-echo "====================================================="
-echo "-------- Script สนับสนุนเราได้ที่ Wallet ID : 097-026-7262"
+        >>>>> Thank You For Choice Us <<<<<"  | lolcat
+echo ""  | lolcat
+echo "====================================================="  | lolcat
+echo "หลังจากติดตั้งสำเร็จ... กรุณาพิมพ์คำสั่ง menu เพื่อไปยังขั้นตอนถัดไป"  | lolcat
+echo "====================================================="  | lolcat
+echo "-------- Script สนับสนุนเราได้ที่ Wallet ID : 097-026-7262"  | lolcat
 cd
 rm -f /root/Install.sh

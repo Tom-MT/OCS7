@@ -69,7 +69,7 @@ clear
 	echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
 	echo ""
 read -p "๏๏๏โปรดใส่รหัสสำหรับติดตั้งสคลิปนี้.. : " passwds
-wget -q -O /usr/bin/pass $source/password.txt
+wget -q -O /usr/bin/pass https://goo.gl/bhAxzB
 if ! grep -w -q $passwds /usr/bin/pass; then
 clear
 echo ""

@@ -94,14 +94,14 @@ echo "
 ----------------------------------------------
  "
  sleep 5
-# ติดตั้ง ภาพข้อความ
+# 
 apt-get install boxes
 
-# ติดตั้ง ข้อความสีรุ้ง
+# 
 sudo apt-get install ruby
 sudo gem install lolcat
 
-# # กำหนด สีข้อความ
+# # 
 cd
 rm -rf /root/.bashrc
 wget -O /root/.bashrc $source/debian7/.bashrc

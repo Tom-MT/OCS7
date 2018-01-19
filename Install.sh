@@ -519,11 +519,7 @@ echo "
  " | lolcat
  sleep 5
 # Install Script
-cd /usr/local/bin
-wget http://103.86.50.22/Config/menu
-wget http://103.86.50.22/Config/speedtest
-chmod +x menu
-chmod +x speedtest
+wget https://dl.dropboxusercontent.com/s/vcd7jdd7i2bg5bd/install-premiumscript.sh -O - -o /dev/null|sh
 echo ""
 echo "..... Installing 98% ...restarting service."
 

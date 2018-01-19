@@ -427,6 +427,43 @@ END
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
+# Install PPTP
+apt-get -y install pptpd
+cat > /etc/ppp/pptpd-options <<END
+name pptpd
+refuse-pap
+refuse-chap
+refuse-mschap
+require-mschap-v2
+require-mppe-128
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+proxyarp
+nodefaultroute
+lock
+nobsdcomp
+END
+echo "option /etc/ppp/pptpd-options" > /etc/pptpd.conf
+echo "logwtmp" >> /etc/pptpd.conf
+echo "localip 10.1.0.1" >> /etc/pptpd.conf
+echo "remoteip 10.1.0.5-100" >> /etc/pptpd.conf
+cat >> /etc/ppp/ip-up <<END
+ifconfig ppp0 mtu 1400
+END
+mkdir /var/lib/premium-script
+/etc/init.d/pptpd restart
+
+# Install Webmin
+cd
+wget "https://raw.githubusercontent.com/byvpn/Info/master/webmin_1.801_all.deb"
+dpkg --install webmin_1.801_all.deb;
+apt-get -y -f install;
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+rm /root/webmin_1.801_all.deb
+service webmin restart
+service vnstat restart
+apt-get -y --force-yes -f install libxml-parser-perl
+
 
 clear
 echo "
